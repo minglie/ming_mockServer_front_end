@@ -16,12 +16,9 @@ class CodeModel extends Component {
 
 
   getValue() {
-    return  M.CodeModel_this.newFunctionBody
+    return M.CodeModel_this.refs.Ming_MonacoEditor.__current_value
   }
 
-  onChange(newValue, e) {
-    M.CodeModel_this.newFunctionBody=newValue;
-  }
 
   componentWillUpdate(nextProps, nextState, nextContext) {
         this.state.language=nextProps.language
@@ -47,7 +44,7 @@ class CodeModel extends Component {
             language={this.state.language}
             theme="vs-dark"
             value={this.state.functionBody}
-            onChange={this.onChange}
+           // onChange={this.onChange}
             options={options}
           />
      </div>
