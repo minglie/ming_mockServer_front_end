@@ -1,17 +1,17 @@
 import React from 'react'
 import { Layout , Menu ,Icon} from  'antd';
 import {HashRouter  , Route, Link  } from "react-router-dom"
+import InterFaceManager from './pages/components/InterFaceManager.jsx'
+import LogManager from './pages/components/LogManager.jsx';
+import MingForm from './pages/components/MingForm.jsx'
 
 
 const { Content, Sider } = Layout;
 
 
 
-const InterFacemanagerDesc=()=>{
-    return(<div>
-        AAAAAAAAAAA
-    </div>);
-}
+
+
 
 class App extends React.Component {
     state = {
@@ -46,9 +46,9 @@ class App extends React.Component {
                     <Layout>
                         <Content style={{ margin: '0 16px' }}>
                             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-                                <Route exact path="/A" component={InterFacemanagerDesc} />
-                                <Route path="/A_1" component={InterFacemanagerDesc} />
-                                <Route path="/B" component={InterFacemanagerDesc} />
+                                <Route exact path="/A" component={InterFaceManager} />
+                                <Route path="/A_1" component={MingForm} />
+                                <Route path="/B" component={LogManager} />
                             </div>
                         </Content>
                     </Layout>

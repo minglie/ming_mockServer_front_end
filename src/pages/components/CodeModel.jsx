@@ -8,11 +8,23 @@ class CodeModel extends Component {
     super(props);
     this.state = {
         functionBody: props.functionBody,
-        language: props.language
+        language: props.language,
+        newFunctionBody:""
     }  
+    M.CodeModel_this=this;
   }
 
 
+  getValue() {
+    return M.CodeModel_this.refs.Ming_MonacoEditor.props.value
+  }
+
+  componentWillUpdate(nextProps, nextState, nextContext) {
+        this.state.language=nextProps.language
+        this.state.functionBody=nextProps.functionBody
+        //console.log('componentWillUpdate',nextProps, nextState, nextContext,this.props)
+     // console.log(nextProps,M.CodeModel_this.refs.Ming_MonacoEditor)
+    }
 
   render() {
     const options = {
@@ -25,12 +37,13 @@ class CodeModel extends Component {
     };
     return (
       <div >
-          <MonacoEditor
+          <MonacoEditor ref="Ming_MonacoEditor"
             width="800"
             height="600"
             language={this.state.language}
             theme="vs-dark"
             value={this.state.functionBody}
+            onChange={this.onChange}
             options={options}
           />
      </div>
