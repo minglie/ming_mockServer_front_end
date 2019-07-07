@@ -29,7 +29,6 @@ class MingForm extends React.Component {
     onCommit(e){
 
        const  M_editor= M.MingForm0_this.refs.M_editor;
-
         let reqParams={
             id: M.MingForm0_this.state.id,
             name:M.MingForm0_this.refs.inputName.value,

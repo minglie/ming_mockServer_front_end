@@ -16,7 +16,11 @@ class CodeModel extends Component {
 
 
   getValue() {
-    return M.CodeModel_this.refs.Ming_MonacoEditor.props.value
+    return  M.CodeModel_this.newFunctionBody
+  }
+
+  onChange(newValue, e) {
+    M.CodeModel_this.newFunctionBody=newValue;
   }
 
   componentWillUpdate(nextProps, nextState, nextContext) {

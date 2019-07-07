@@ -1,9 +1,12 @@
 import { createStore } from 'redux'
 import antd,{Table, Button,Tooltip,Input,Icon,Pagination}  from  'antd';
-import React, { Component } from 'react';
+import React from 'react';
 
 
 const maplist = (data) => {
+   if(!data){
+       return
+   }
 
     const databox = data.map((item) => {
         return Object.assign({}, item, {
@@ -34,7 +37,11 @@ const model={
     action:(dispatch)=> {
         return {
             Alldatas: (page) => {
+             
+
                 MIO.listByPage(page).then((d)=>{
+
+                  //  console.log("AAAAAAAA",d)
                     dispatch({
                         type: "COM_ALLDATA",
                         dataAll:d.rows,
@@ -157,6 +164,7 @@ class InterFaceManager extends React.Component {
 
     }
     componentDidMount() {
+
         let current=1;
         let pageSize=10;
         this.m_props.Alldatas(
