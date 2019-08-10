@@ -1,5 +1,5 @@
 
-import {M} from "ming_mock"
+
 
 const Context={};
 

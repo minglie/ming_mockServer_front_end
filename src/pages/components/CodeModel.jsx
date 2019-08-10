@@ -39,7 +39,7 @@ class CodeModel extends Component {
     return (
       <div >
           <MonacoEditor ref="Ming_MonacoEditor"
-            width="800"
+            width="100%"
             height="600"
             language={this.state.language}
             theme="vs-dark"

@@ -3,6 +3,7 @@ import { Layout , Menu ,Icon} from  'antd';
 import {HashRouter  , Route, Link  } from "react-router-dom"
 import InterFaceManager from './pages/components/InterFaceManager.jsx'
 import LogManager from './pages/components/LogManager.jsx';
+import ConsoleDisPlay from './pages/components/ConsoleDisPlay.jsx';
 import MingForm from './pages/components/MingForm.jsx'
 
 
@@ -38,6 +39,9 @@ class App extends React.Component {
                             <Menu.Item key="2">
                                 <Link to="/B"><Icon type="file-text" theme="twoTone"/>日志管理</Link>
                             </Menu.Item>
+                            <Menu.Item key="3">
+                                <Link to="/C"><Icon type="desktop" />node控制台</Link>
+                            </Menu.Item>
                             <Menu.Item key="4">
                                 <a href="dbManager.html"><Icon type="database" theme="twoTone"/>数据库管理</a>
                             </Menu.Item>
@@ -49,6 +53,7 @@ class App extends React.Component {
                                 <Route exact path="/A" component={InterFaceManager} />
                                 <Route path="/A_1" component={MingForm} />
                                 <Route path="/B" component={LogManager} />
+                                <Route path="/C" component={ConsoleDisPlay} />
                             </div>
                         </Content>
                     </Layout>

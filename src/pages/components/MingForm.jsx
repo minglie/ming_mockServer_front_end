@@ -45,7 +45,12 @@ class MingForm extends React.Component {
         }
         M.fetchPost(reqUrl,(r)=>{
             if(r.success){
-                M.MingForm0_this.props.history.push("/A")
+                if(e=="test"){
+                    antd.message.success("ok")
+                }else{
+                    M.MingForm0_this.props.history.push("/A")
+                }
+               
             }else {
                 antd.message.error(r.data)
             }
@@ -72,6 +77,11 @@ class MingForm extends React.Component {
                 <br/><br/>
                 <Button type="primary"  onClick={this.onCommit}>
                     确定
+                </Button>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+                <Button type="primary"  onClick={()=>this.onCommit("test")}>
+                    测试
                 </Button>
                 <br/><br/><hr/>
                 <CodeModel ref="M_editor" language={this.state.language} functionBody={this.state.functionBody}/>
