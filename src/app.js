@@ -45,6 +45,9 @@ class App extends React.Component {
                             <Menu.Item key="4">
                                 <a href="dbManager.html"><Icon type="database" theme="twoTone"/>数据库管理</a>
                             </Menu.Item>
+                            <Menu.Item key="5">
+                                <a href="https://www.yuque.com/wangpengfei-kgu2c/dy7nzd/vgkbv8"><Icon type="question" />帮助</a>
+                            </Menu.Item>
                         </Menu>
                     </Sider>
                     <Layout>

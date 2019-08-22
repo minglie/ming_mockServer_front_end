@@ -16,6 +16,14 @@ class MingForm extends React.Component {
             language="javascript";
             functionBody=M.javascript_template;
         }
+        if(e.target.value==2){
+            language="json";
+            functionBody=M.json_template;
+        }
+        if(e.target.value==3){
+            language="mysql";
+            functionBody=M.sql_template;
+        }
         M.MingForm0_this.setState({
             resultType: e.target.value,
             language:language,
@@ -29,12 +37,21 @@ class MingForm extends React.Component {
     onCommit(e){
 
        const  M_editor= M.MingForm0_this.refs.M_editor;
+        let currentresultType="javascript";
+       if(M.MingForm0_this.state.resultType==1){
+           currentresultType="javascript";
+        }else if(M.MingForm0_this.state.resultType==2){
+            currentresultType="json";
+        }else if(M.MingForm0_this.state.resultType==3){
+            currentresultType="mysql";
+        }
+
         let reqParams={
             id: M.MingForm0_this.state.id,
             name:M.MingForm0_this.refs.inputName.value,
             path:M.MingForm0_this.refs.inputPath.value,
             method:(M.MingForm0_this.state.method==1?"get":"post"),
-            resultType:(M.MingForm0_this.state.resultType==1?"javascript":"json"),
+            resultType:currentresultType,
             functionBody:M_editor.getValue()
         }
         let reqUrl="";
@@ -73,6 +90,7 @@ class MingForm extends React.Component {
                 <Radio.Group onChange={this.onChangeResultType} value={this.state.resultType}>
                     <Radio value={1}>javascript</Radio>
                     <Radio value={2}>json</Radio>
+                    <Radio value={3}>mysql</Radio>
                 </Radio.Group>
                 <br/><br/>
                 <Button type="primary"  onClick={this.onCommit}>

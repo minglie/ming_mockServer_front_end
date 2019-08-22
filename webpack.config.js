@@ -129,7 +129,7 @@ module.exports = {
       // 在内存中生成页面路径，默认值为：index.html
       filename: 'index.html'
     }),
-    new MonacoWebpackPlugin({languages:['javascript', 'json'],output:'monaco-editor'})
+    new MonacoWebpackPlugin({languages:['javascript', 'json','mysql'],output:'monaco-editor'})
   ]
   
 }

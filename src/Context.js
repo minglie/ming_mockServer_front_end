@@ -28,11 +28,15 @@ M.json_template=`{
 
 
 M.javascript_template=
-`(req,res)=>{ 
+`async (req,res)=>{ 
     console.log(req.params);
-    res.send("ok");
+    let r=await Db.doSql("select * from accout;")
+    res.send(M.result(r));
 }`;
 
+M.sql_template=
+" 	select ${req.params.id+88} from accout;"
+;
 
 
 export default Context;

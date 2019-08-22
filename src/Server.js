@@ -1,4 +1,5 @@
-M.host = "http://localhost:8080";
+//M.host = "http://localhost:8080";
+M.host = "";
 //app.begin((req,res)=>console.log(req.params))
 // console.log(app._begin)
 

@@ -214,7 +214,11 @@ class InterFaceManager extends React.Component {
     edit(r){
         r.method=r.method=="get"?1:2;
         r.language=r.resultType;
-        r.resultType=r.resultType=="javascript"?1:2;
+        let aa={};
+        aa["javascript"]=1;
+        aa["json"]=2;
+        aa["mysql"]=3;
+        r.resultType=aa[r.resultType];
         M.setAttribute("cur_sys_server_info",{id:r.id,name:r.name,path:r.path,method :r.method,resultType:r.resultType,functionBody:r.functionBody,language:r.language})
         m_this.props.history.push("/A_1")
     }
